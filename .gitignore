@@ -1,2 +1,7 @@
 node_modules/
 VCAP_SERVICES.json
+# Logs
+logs
+*.log
+npm-debug.log*
+*.DS_Store

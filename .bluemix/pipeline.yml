@@ -1,35 +1,33 @@
---- 
-stages: 
+---
+stages:
   - name: Build Stage
-    inputs: 
+    inputs:
       - type: git
         branch: master
-    triggers: 
+    triggers:
       - type: commit
-    jobs: 
+    jobs:
       - name: Build
         type: builder
   - name: Deploy Stage
-    inputs: 
+    inputs:
       - type: job
         stage: Build Stage
         job: Build
-    triggers: 
+    triggers:
       - type: stage
-    jobs: 
+    jobs:
       - name: Deploy to dev
         type: deployer
         script: |-
             #!/bin/bash
-            cf push "${CF_APP}" --no-start
-            cf create-service iotf-service iotf-service-free iotp-service-for-conveyor
-            cf bind-service "${CF_APP}" iotp-service-for-conveyor
-            cf start "${CF_APP}"
-            # View logs
-            cf logs "${CF_APP}" --recent
-        target: 
+            cf create-service iotf-service iotf-service-free iotp-for-conveyor
+            cf push conveyorbelt-iotp --no-start
+            cf bind-service conveyorbelt-iotp iotp-for-conveyor
+            cf restage conveyorbelt-iotp
+            cf start conveyorbelt-iotp
+        target:
           organization: ${CF_ORGANIZATION}
           space: ${CF_SPACE}
           url: ${CF_TARGET_URL}
           application: ${CF_APP}
-
