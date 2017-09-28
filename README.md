@@ -1,3 +1,5 @@
+![Bluemix Deployments](https://metrics-tracker.mybluemix.net/stats/10963692ccbfc7cd46c6d15f02959c71/badge.svg)
+
 # Connecting a conveyor belt device  
 Create a basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on Bluemix
 
@@ -38,7 +40,7 @@ If you choose to use Git to download the code samples you must also have a [GitH
 ## Deploy to Bluemix
 If you want to deploy directly to Bluemix, click on 'Deploy to Bluemix' button below to create a Bluemix DevOps service toolchain and pipeline for deploying basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on Bluemix, else jump to [Steps](#steps)
 
-[![Create Toolchain](https://github.com/IBM/container-journey-template/blob/master/images/button.png)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https://github.com/IBM/Create-basic-conveyor-belt-using-IoTdevice)
+[![Deploy to Bluemix](https://metrics-tracker.mybluemix.net/stats/10963692ccbfc7cd46c6d15f02959c71/button.svg)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https://github.com/IBM/guide-conveyor-simulator)
 
 After deploying the application, please continue with [Step 3 - See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform).
 
@@ -342,18 +344,25 @@ For more information about creating boards and cards, see [Visualizing real-time
 
 ## Privacy notice
 
-This web application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/cloudant-labs/deployment-tracker) service on each deployment:
+This web application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
 
+* Node.js package version
+* Node.js repository URL
 * Application Name (`application_name`)
+* Application GUID (`application_id`)
+* Application instance index number (`instance_index`)
 * Space ID (`space_id`)
 * Application Version (`application_version`)
-* Application URIs (`application_uris)``
+* Application URIs (`application_uris`)
+* Labels of bound services
+* Number of instances for each bound service and associated plan information
+* Metadata in the repository.yaml file
 
-This data is collected from the `VCAP_APPLICATION` environment variable in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
+This data is collected from the `package.json` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
 ## Disabling deployment tracking
 
-Deployment tracking can be disabled by removing the require("cf-deployment-tracker-client").track(); line from the './www/bin' file.
+Deployment tracking can be disabled by removing the `require("metrics-tracker-client").track();` line from the './bin/www' file.
 
 ## License
 [Apache 2.0](LICENSE)

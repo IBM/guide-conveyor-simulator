@@ -1,0 +1,7 @@
+id: guide-conveyor-simulator
+event_id: web
+event_organizer: dev-journeys
+runtimes:
+  - Cloud Foundry
+services:
+  - Watson IoT Platform

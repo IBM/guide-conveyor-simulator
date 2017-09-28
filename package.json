@@ -12,12 +12,12 @@
     "hbs": "~4.0.1",
     "ibmiotf": "^0.2.34",
     "morgan": "~1.7.0",
-    "cf-deployment-tracker-client": "*",
+    "metrics-tracker-client": "*",
     "serve-favicon": "~2.3.0"
   },
  "repository": {
     "type": "git",
-    "url": "https://github.com/ibm-watson-iot/iot-guide-conveyor-simulator"
+    "url": "https://github.com/IBM/guide-conveyor-simulator"
  },
  "license": "EPL-1.0"
 }
