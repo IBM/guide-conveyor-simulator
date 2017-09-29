@@ -22,10 +22,10 @@ stages:
         script: |-
             #!/bin/bash
             cf create-service iotf-service iotf-service-free iotp-for-conveyor
-            cf push conveyorbelt-iotp --no-start
-            cf bind-service conveyorbelt-iotp iotp-for-conveyor
-            cf restage conveyorbelt-iotp
-            cf start conveyorbelt-iotp
+            cf push ${CF_APP} --no-start
+            cf bind-service ${CF_APP} iotp-for-conveyor
+            cf restage ${CF_APP}
+            cf start ${CF_APP}
         target:
           organization: ${CF_ORGANIZATION}
           space: ${CF_SPACE}
