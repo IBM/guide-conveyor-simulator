@@ -23,11 +23,12 @@ As part of this guide, you will:
 
 ![Architecture Diagram](images/architecture.png)
 
-1. Create & Deploy Wtson IoT Platform on Bluemix
+1. Create & Deploy Watson IoT Platform on Bluemix
 2. Build  & Deploy Simulated Sample Conveyor
 3. Connect the conveyor belt to the Watson IoT Platform
 4. Monitor & Visualize device data on the Watson IoT dashboard.
 
+Click here to view the [IBM Pattern](https://developer.ibm.com/code/patterns/build-monitor-iot-driven-conveyor-belt/) for this project.
 ## Prerequisites
 
 You will need the following accounts and tools:
