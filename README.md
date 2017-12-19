@@ -366,4 +366,4 @@ This data is collected from the `package.json` and `repository.yaml` file in the
 Deployment tracking can be disabled by removing the `require("metrics-tracker-client").track();` line from the './bin/www' file.
 
 ## License
-[Apache 2.0](LICENSE)
+[Eclipse Public License 1.0](LICENSE)
