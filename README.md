@@ -1,6 +1,6 @@
 ![Bluemix Deployments](https://metrics-tracker.mybluemix.net/stats/10963692ccbfc7cd46c6d15f02959c71/badge.svg)
 
-# Connecting a conveyor belt device  
+# [Connecting a conveyor belt device](https://developer.ibm.com/code/patterns/build-monitor-iot-driven-conveyor-belt/)  
 Create a basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on IBM Cloud
 
 ## Overview and goal
