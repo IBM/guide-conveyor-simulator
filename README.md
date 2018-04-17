@@ -1,7 +1,7 @@
 ![Bluemix Deployments](https://metrics-tracker.mybluemix.net/stats/10963692ccbfc7cd46c6d15f02959c71/badge.svg)
 
 # Connecting a conveyor belt device  
-Create a basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on Bluemix
+Create a basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on IBM Cloud
 
 ## Overview and goal
 
@@ -9,7 +9,7 @@ This guide steps you through the process of connecting devices to  Watson IoT Pl
 
 We set up a connected conveyor belt and use it to send IoT data to Watson IoT Platform. Depending on your skill level, you can follow one or both of the following paths to set up your conveyor belt:
 * Path A  
-This path gets you started quickly by installing a conveyor belt simulator app on Bluemix. The app self-registers a device with Watson IoT Platform and automatically sends well-formatted data to the platform. Instructions for this path are in [Step 2A - Use the simulator sample app from GitHub](#step-2a---deploy-the-sample-conveyor-belt-web-application).  
+This path gets you started quickly by installing a conveyor belt simulator app on IBM Cloud. The app self-registers a device with Watson IoT Platform and automatically sends well-formatted data to the platform. Instructions for this path are in [Step 2A - Use the simulator sample app from GitHub](#step-2a---deploy-the-sample-conveyor-belt-web-application).  
 * Path B  
 This path is technically more challenging and requires additional hardware, Python programming skills, and manual registration of your device with Watson IoT Platform. Instructions for this path are in  [Step 2B - Build a physical conveyor belt with a Raspberry Pi and an electric motor](#step-2b---build-a-raspberry-pi-powered-conveyor-belt).
 
@@ -23,7 +23,7 @@ As part of this guide, you will:
 
 ![Architecture Diagram](images/architecture.png)
 
-1. Create & Deploy Watson IoT Platform on Bluemix
+1. Create & Deploy Watson IoT Platform on IBM Cloud
 2. Build  & Deploy Simulated Sample Conveyor
 3. Connect the conveyor belt to the Watson IoT Platform
 4. Monitor & Visualize device data on the Watson IoT dashboard.
@@ -32,16 +32,16 @@ Click here to view the [IBM Pattern](https://developer.ibm.com/code/patterns/bui
 ## Prerequisites
 
 You will need the following accounts and tools:
-* [Bluemix account](https://console.ng.bluemix.net/registration/)
+* [IBM Cloud account](https://console.ng.bluemix.net/registration/)
 * [Bluemix CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started)
 * Optional: [Git](https://git-scm.com/downloads)
 If you choose to use Git to download the code samples you must also have a [GitHub.com account](https://github.com). You can also download the code as a compressed file without a GitHub.com account.
 * Optional: A mobile phone on which to run the *Conveyor belt* sample web application to send accelerometer data.
 
-## Deploy to Bluemix
-If you want to deploy directly to Bluemix, click on 'Deploy to Bluemix' button below to create a Bluemix DevOps service toolchain and pipeline for deploying basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on Bluemix, else jump to [Steps](#steps)
+## Deploy to IBM Cloud
+If you want to deploy directly to Bluemix, click on 'Deploy to Bluemix' button below to create a Bluemix DevOps service toolchain and pipeline for deploying basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on IBM Cloud, else jump to [Steps](#steps)
 
-[![Deploy to Bluemix](https://metrics-tracker.mybluemix.net/stats/10963692ccbfc7cd46c6d15f02959c71/button.svg)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https://github.com/IBM/guide-conveyor-simulator)
+[![Deploy to IBM Cloud](https://metrics-tracker.mybluemix.net/stats/10963692ccbfc7cd46c6d15f02959c71/button.svg)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https://github.com/IBM/guide-conveyor-simulator)
 
 After deploying the application, please continue with [Step 3 - See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform).
 
@@ -336,16 +336,16 @@ For more information about creating boards and cards, see [Visualizing real-time
 
 ## Useful links
 
-* [IBM Bluemix](https://bluemix.net/)  
-* [IBM Bluemix Documentation](https://www.ng.bluemix.net/docs/)  
-* [IBM Bluemix Developers Community](http://developer.ibm.com/bluemix)  
+* [IBM Cloud](https://bluemix.net/)  
+* [IBM Cloud Documentation](https://www.ng.bluemix.net/docs/)  
+* [IBM Cloud Developers Community](http://developer.ibm.com/bluemix)  
 * [IBM Watson Internet of Things](http://www.ibm.com/internet-of-things/)  
 * [IBM Watson IoT Platform](http://www.ibm.com/internet-of-things/iot-solutions/watson-iot-platform/)   
 * [IBM Watson IoT Platform Developers Community](https://developer.ibm.com/iotplatform/)
 
 ## Privacy notice
 
-This web application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
+This web application includes code to track deployments to [IBM Cloud](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
 
 * Node.js package version
 * Node.js repository URL
@@ -359,11 +359,24 @@ This web application includes code to track deployments to [IBM Bluemix](https:/
 * Number of instances for each bound service and associated plan information
 * Metadata in the repository.yaml file
 
-This data is collected from the `package.json` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
+This data is collected from the `package.json` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
 ## Disabling deployment tracking
 
 Deployment tracking can be disabled by removing the `require("metrics-tracker-client").track();` line from the './bin/www' file.
+
+## <h2>Learn more</h2>
+<ul>
+<li><strong>Artificial Intelligence Code Patterns</strong>: Enjoyed this Code Pattern? Check out our other <a href="https://developer.ibm.com/code/technologies/artificial-intelligence/" rel="nofollow">AI Code Patterns</a>.</li>
+<li><strong>Data Analytics Code Patterns</strong>: Enjoyed this Code Pattern? Check out our other <a href="https://developer.ibm.com/code/technologies/data-science/" rel="nofollow">Data Analytics Code Patterns</a></li>
+<li><strong>AI and Data Code Pattern Playlist</strong>: Bookmark our <a href="https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde" rel="nofollow">playlist</a> with all of our Code Pattern videos</li>
+<li><strong>With Watson</strong>: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? <a href="https://www.ibm.com/watson/with-watson/" rel="nofollow">Join the With Watson program</a> to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.</li>
+<li><strong>Data Science Experience</strong>: Master the art of data science with IBM's <a href="https://datascience.ibm.com/" rel="nofollow">Data Science Experience</a></li>
+<li><strong>PowerAI</strong>: Get started or get scaling, faster, with a software distribution for machine learning running on the Enterprise Platform for AI: <a href="https://www.ibm.com/ms-en/marketplace/deep-learning-platform" rel="nofollow">IBM Power Systems</a></li>
+<li><strong>Spark on IBM Cloud</strong>: Need a Spark cluster? Create up to 30 Spark executors on IBM Cloud with our <a href="https://console.bluemix.net/catalog/services/apache-spark" rel="nofollow">Spark service</a></li>
+<li><strong>Kubernetes on IBM Cloud</strong>: Deliver your apps with the combined the power of <a href="https://www.ibm.com/cloud-computing/bluemix/containers" rel="nofollow">Kubernetes and Docker on IBM Cloud</a></li>
+</ul>
+
 
 ## License
 [Eclipse Public License 1.0](LICENSE)
