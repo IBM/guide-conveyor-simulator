@@ -1,3 +1,4 @@
+require('metrics-tracker-client').track();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
