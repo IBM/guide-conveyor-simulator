@@ -1,3 +1,6 @@
+**__Skill Level__**: Beginner
+<br>**__N.B__**: All services used in this repo are Lite plans.
+
 ![IBM Cloud Deployments](https://metrics-tracker.mybluemix.net/stats/10963692ccbfc7cd46c6d15f02959c71/badge.svg)
 
 # [Connecting a conveyor belt device](https://developer.ibm.com/code/patterns/build-monitor-iot-driven-conveyor-belt/)  
@@ -14,10 +17,10 @@ This path gets you started quickly by installing a conveyor belt simulator app o
 This path is technically more challenging and requires additional hardware, Python programming skills, and manual registration of your device with Watson IoT Platform. Instructions for this path are in  [Step 2B - Build a physical conveyor belt with a Raspberry Pi and an electric motor](#step-2b---build-a-raspberry-pi-powered-conveyor-belt).
 
 As part of this guide, you will:
-- Create and deploy a Watson IoT Platform organization by using Cloud Foundry CLI.
-- Build and deploy a sample conveyor belt device.
-- Connect the simulated conveyor belt device to Watson IoT Platform.
-- Monitor and visualize device data by using the Watson IoT Platform dashboards.
+1. Create and deploy a Watson IoT Platform organization by using Cloud Foundry CLI.
+2. Build and deploy a sample conveyor belt device.
+3. Connect the simulated conveyor belt device to Watson IoT Platform.
+4. Monitor and visualize device data by using the Watson IoT Platform dashboards.
 
 > To get started with Watson IoT Platform using a different IoT device, see the [Getting started tutorial](https://console.bluemix.net/docs/services/IoT/getting-started.html#getting-started-with-iotp).
 
@@ -46,21 +49,21 @@ If you want to deploy directly to IBM Cloud, click on 'Deploy to IBM Cloud' butt
 After deploying the application, please continue with [Step 3 - See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform).
 
 ## Steps
-* [Deploy Watson IoT Platform](#step-1----deploy-watson-iot-platform)
-* Do one of the following 2 steps:
+1. [Deploy Watson IoT Platform](#step-1----deploy-watson-iot-platform)
+2. Do one of the following 2 steps:
 
-   - [Deploy the sample conveyor belt web application](#step-2a---deploy-the-sample-conveyor-belt-web-application)
+   2a. [Deploy the sample conveyor belt web application](#step-2a---deploy-the-sample-conveyor-belt-web-application)
 
-   - [Build a Raspberry Pi-powered conveyor belt](#step-2b---build-a-raspberry-pi-powered-conveyor-belt)
+   2b. [Build a Raspberry Pi-powered conveyor belt](#step-2b---build-a-raspberry-pi-powered-conveyor-belt)
 
-* [See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform)
-* [Visualize live data in Watson IoT Platform](#step-4---visualize-live-data-in-watson-iot-platform)
+3. [See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform)
+4. [Visualize live data in Watson IoT Platform](#step-4---visualize-live-data-in-watson-iot-platform)
 
 ## Step 1 -  Deploy Watson IoT Platform
 
 > Watson IoT Platform provides powerful application access to IoT devices and data to help you rapidly compose analytics applications, visualization dashboards, and mobile IoT apps. The steps that follow will deploy an instance of the Watson IoT Platform service with the name `iotp-for-conveyor` in your IBM Cloud environment. If you already have a service instance running, you can use that instance with the guide and skip this first step. Just make sure that you use the correct service name and IBM Cloud space when you proceed through the guides.
 
-1. From the command line, set your API endpoint by running the cf api command.   
+1. From the command line, set your API endpoint by running the bx api command.   
 Replace the `API-ENDPOINT` value with the API endpoint for your region.
 ```
 bx api <API-ENDPOINT>
@@ -89,11 +92,11 @@ If prompted, select the organization and space where you want to deploy Watson I
 
 3. Deploy the Watson IoT Platform service to IBM Cloud.
 ```    
-bx cf create-service iotf-service iotf-service-free YOUR_IOT_PLATFORM_NAME
+bx create-service iotf-service iotf-service-free YOUR_IOT_PLATFORM_NAME
 ```
 
 For YOUR_IOT_PLATFORM_NAME, use *iotp-for-conveyor*.  
-Example: `bx cf create-service iotf-service iotf-service-free iotp-for-conveyor`
+Example: `bx create-service iotf-service iotf-service-free iotp-for-conveyor`
 
 Next, you will create a sample conveyor belt device. Choose which path you want to take:
  - Path A: [Step 2A - Use the simulator sample app from GitHub](#step-2a---deploy-the-sample-conveyor-belt-web-application).  
@@ -105,22 +108,22 @@ The sample app lets you simulate a IBM Cloud connected industrial conveyor belt.
 
 ![Conveyor belt app](images/app_conveyor_belt.png)
 
-* From the *guide-conveyor-simulator* directory, push your app to IBM Cloud and give it a new name by replacing YOUR_APP_NAME in the cf push command. Use the --no-start option because you will start the app in the next stage after it is bound to Watson IoT Platform.
+* From the *guide-conveyor-simulator* directory, push your app to IBM Cloud and give it a new name by replacing YOUR_APP_NAME in the bx push command. Use the --no-start option because you will start the app in the next stage after it is bound to Watson IoT Platform.
 > Note: Deploying your application can take a few minutes.
 
 ```bash
-bx cf push YOUR_APP_NAME --no-start
+bx app push YOUR_APP_NAME --no-start
 ```  
 
 * In the *guide-conveyor-simulator* directory, bind your app to your instance of the Watson IoT Platform by using the names that you provided for each.
 ```bash
-bx cf bind-service YOUR_APP_NAME iotp-for-conveyor
+bx bind-service YOUR_APP_NAME iotp-for-conveyor
 ```
 >For more information about binding applications, see [Connecting applications](https://console.bluemix.net/docs/services/IoT/platform_authorization.html#bluemix-binding).
 
 * Start your application for the binding to take effect.
 ```bash
-bx cf start YOUR_APP_NAME
+bx start YOUR_APP_NAME
 ```
 At this stage, your sample web application is deployed on IBM Cloud. When deployment is completed, a message is displayed to indicate that your app is running.
 Example:
@@ -140,11 +143,8 @@ start command:     ./vendor/initial_startup.rb
 #0   running   2017-05-09T13:35:08Z   0.0%   19.6M of 64M   66.2M of 256M
 ```
 
-To see both the app deployment status and the app URL, you can run the following command:
-```bash
-bx cf apps
-```
-> Troubleshoot errors in the deployment process by using the `bx cf logs YOUR_APP_NAME --recent` command.
+
+> Troubleshoot errors in the deployment process by using the `bx app logs YOUR_APP_NAME --recent` command.
 
 * In a browser, access the app.  
 Open the following URL: `https://YOUR_APP_NAME.mybluemix.net`    
