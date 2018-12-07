@@ -6,7 +6,7 @@ Create a basic conveyor belt with an IoT device that sends monitoring data to Wa
 
 ## Overview and goal
 
-This guide steps you through the process of connecting devices to  Watson IoT Platform, monitoring and acting on device data
+This guide steps you through the process of connecting devices to Watson IoT Platform, monitoring and acting on device data
 
 We set up a connected conveyor belt and use it to send IoT data to Watson IoT Platform. Depending on your skill level, you can follow one or both of the following paths to set up your conveyor belt:
 * Path A  
@@ -40,7 +40,7 @@ If you choose to use Git to download the code samples you must also have a [GitH
 * Optional: A mobile phone on which to run the *Conveyor belt* sample web application to send accelerometer data.
 
 ## Deploy to IBM Cloud
-If you want to deploy directly to IBM Cloud, click on 'Deploy to IBM Cloud' button below to create a IBM Cloud DevOps service toolchain and pipeline for deploying basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on IBM Cloud, else jump to [Steps](#steps)
+If you want to deploy directly to IBM Cloud, click on `Deploy to IBM Cloud` button below to create a IBM Cloud DevOps service toolchain and pipeline for deploying basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on IBM Cloud, else jump to [Steps](#steps)
 
 [![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/guide-conveyor-simulator.git&branch=master)
 
@@ -61,7 +61,7 @@ After deploying the application, please continue with [Step 3 - See raw data in 
 
 > Watson IoT Platform provides powerful application access to IoT devices and data to help you rapidly compose analytics applications, visualization dashboards, and mobile IoT apps. The steps that follow will deploy an instance of the Watson IoT Platform service with the name `iotp-for-conveyor` in your IBM Cloud environment. If you already have a service instance running, you can use that instance with the guide and skip this first step. Just make sure that you use the correct service name and IBM Cloud space when you proceed through the guides.
 
-1. From the command line, set your API endpoint by running the bx api command.   
+1. From the command line, set your API endpoint by running the `bx api` command.   
 Replace the `API-ENDPOINT` value with the API endpoint for your region.
 ```
 bx api <API-ENDPOINT>
@@ -93,7 +93,7 @@ If prompted, select the organization and space where you want to deploy Watson I
 bx create-service iotf-service iotf-service-free YOUR_IOT_PLATFORM_NAME
 ```
 
-For YOUR_IOT_PLATFORM_NAME, use *iotp-for-conveyor*.  
+For `YOUR_IOT_PLATFORM_NAME`, use *iotp-for-conveyor*.  
 Example: `bx create-service iotf-service iotf-service-free iotp-for-conveyor`
 
 Next, you will create a sample conveyor belt device. Choose which path you want to take:
@@ -106,7 +106,7 @@ The sample app lets you simulate a IBM Cloud connected industrial conveyor belt.
 
 ![Conveyor belt app](images/app_conveyor_belt.png)
 
-* From the *guide-conveyor-simulator* directory, push your app to IBM Cloud and give it a new name by replacing YOUR_APP_NAME in the bx push command. Use the --no-start option because you will start the app in the next stage after it is bound to Watson IoT Platform.
+* From the *guide-conveyor-simulator* directory, push your app to IBM Cloud and give it a new name by replacing `YOUR_APP_NAME` in the bx push command. Use the `--no-start` option because you will start the app in the next stage after it is bound to Watson IoT Platform.
 > Note: Deploying your application can take a few minutes.
 
 ```bash
@@ -200,11 +200,11 @@ $ git clone https://github.com/ibm-watson-iot/guide-conveyor-rasp-pi
 ```
 3. Register the device with Watson IoT Platform.
 For more information about registering devices, see [Connecting devices](https://console.bluemix.net/docs/services/IoT/iotplatform_task.html#iotplatform_subtask1).
-     * In the IBM console, click **Launch** other Watson IoT Platform service details page.The Watson IoT Platform web console opens in a new browser tab at the following URL:
+     * In the IBM console, click **Launch** other Watson IoT Platform service details page. The Watson IoT Platform web console opens in a new browser tab at the following URL:
          ```
          https://ORG_ID.internetofthings.ibmcloud.com/dashboard/#/overview
          ```
-         Where ORG_ID is the unique six character ID of [your Watson IoT Platform organization](https://console.bluemix.net/docs/services/IoT/iotplatform_overview.html#organizations).
+         Where `ORG_ID` is the unique six character ID of [your Watson IoT Platform organization](https://console.bluemix.net/docs/services/IoT/iotplatform_overview.html#organizations).
      * In the Overview dashboard, from the menu pane, select **Devices** and then click **Add Device**.
      * Create a device type for the device that you are adding.
          - Click **Create device type**.
@@ -256,7 +256,7 @@ While the motor is running, the program publishes events of event type `sensorDa
 
 1. Verify that the device is registered with Watson IoT Platform.
     * Login to your IBM dashboard at:  [https://bluemix.net](https://bluemix.net/)
-    * From [your list of services](https://bluemix.net/dashboard/services), click the *iotp-for-conveyor* Watson IoT Platform} service.
+    * From [your list of services](https://bluemix.net/dashboard/services), click the *iotp-for-conveyor* Watson IoT Platform service.
     * Click *Launch* to open the Watson IoT Platform dashboard in a new browser tab.  
         You can bookmark the URL for easy access later.   
         Example: `https://*iot-org-id*.internetofthings.ibmcloud.com`.
