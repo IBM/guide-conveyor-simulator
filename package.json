@@ -12,7 +12,6 @@
     "hbs": "~4.0.1",
     "ibmiotf": "^0.2.34",
     "morgan": "~1.7.0",
-    "metrics-tracker-client": "*",
     "serve-favicon": "~2.3.0"
   },
  "repository": {
