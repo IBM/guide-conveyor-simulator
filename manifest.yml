@@ -4,5 +4,6 @@ applications:
   path: .
   memory: 256M
   disk_quota: 256M
+  buildpack: nodejs_buildpack
   instances: 1
   random-route: false
