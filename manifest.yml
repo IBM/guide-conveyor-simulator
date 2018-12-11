@@ -1,6 +1,5 @@
 applications:
 - name: guide-conveyor-simulator
-  command: npm start
   path: .
   memory: 256M
   disk_quota: 256M
