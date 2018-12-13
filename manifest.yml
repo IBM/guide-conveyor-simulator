@@ -3,7 +3,7 @@ applications:
   command: npm start
   path: .
   memory: 256M
-  disk_quota: 256M
+  disk_quota: 1024M
   buildpack: nodejs_buildpack
   instances: 1
   random-route: false
