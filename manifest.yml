@@ -1,20 +1,9 @@
-declared-services:
-  cloudant:
-    label: cloudantNoSQLDB
-    plan: Lite
-  iot-service:
-    label: iotf-service
-    plan: iotf-service-free
 applications:
 - name: guide-conveyor-simulator
   command: npm start
   path: .
-  domain: mybluemix.net
   memory: 256M
   disk_quota: 1024M
   buildpack: nodejs_buildpack
   instances: 1
   random-route: false
-  services:
-  - cloudant
-  - iot-service
