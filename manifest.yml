@@ -1,3 +1,7 @@
+declared-services:
+  iot-service:
+    label: iotf-service
+    plan: iotf-service-free
 applications:
 - name: guide-conveyor-simulator
   command: npm start
@@ -7,3 +11,5 @@ applications:
   buildpack: nodejs_buildpack
   instances: 1
   random-route: false
+  services:
+  - iot-service
