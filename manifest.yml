@@ -1,5 +1,5 @@
 declared-services:
-  iot-service:
+  gcs-iot-service:
     label: iotf-service
     plan: iotf-service-free
 applications:
@@ -12,4 +12,4 @@ applications:
   instances: 1
   random-route: false
   services:
-  - iot-service
+  - gcs-iot-service
